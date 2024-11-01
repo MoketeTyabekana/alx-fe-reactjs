@@ -36,8 +36,8 @@ function App() {
       </p>
 
       <WelcomeMessage />
-      <Header /><Footer /><MainContent /><UserProfile name="Mokete" age={30} bio="Software Developer"/>
-    </>
+      <Header /><Footer /><MainContent />
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />    </>
   );
 }
 
