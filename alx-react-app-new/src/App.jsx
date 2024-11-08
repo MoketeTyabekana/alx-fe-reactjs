@@ -36,7 +36,7 @@ function App() {
       </p>
 
       <WelcomeMessage />
-      <Header /><Footer /><MainContent />
+      <Header /><MainContent /><Footer />
       <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />    </>
   );
 }
