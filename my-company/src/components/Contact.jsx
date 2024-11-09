@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import Navbar from './Navbar';
 
    function Contact() {
+<Navbar/>
+
+
      const [formData, setFormData] = useState({
        name: '',
        email: '',
