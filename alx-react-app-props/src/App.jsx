@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import MainContent from "./components/MainContent";
 import Footer from "./components/Footer";
 import ProfilePage from './components/ProfilePage'
+import UserConext from './UserContext'
 
 
 function App() {
@@ -40,7 +41,12 @@ function App() {
 
       <WelcomeMessage />
       <Header /><Footer /><MainContent />
-      <ProfilePage userData={userData} />  </>
+      <ProfilePage userData={userData} /> 
+       <UserConext.Provider value={userData}>
+          <ProfilePage/>
+       </UserConext.Provider>
+      
+      </>
   );
 }
 
