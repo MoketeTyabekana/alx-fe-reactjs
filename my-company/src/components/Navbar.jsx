@@ -1,10 +1,11 @@
 import { Outlet, Link } from "react-router-dom";
+import './App.css'
 
 const Navbar  = () => {
   return (
     <>
-      <nav>
-        <ul>
+      <nav style={{padding:'10px 40px', width:'100%', backgroundColor:'#000000'}}>
+        <ul style={{display:'flex', listStyle:'none', gap:'10px', justifyContent:'center',textDecoration:'none'}}>
           <li>
             <Link to="/">Home</Link>
           </li>
