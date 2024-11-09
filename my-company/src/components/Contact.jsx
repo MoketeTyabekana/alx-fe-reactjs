@@ -25,11 +25,11 @@ import Navbar from './Navbar';
 
 
         
-       <div style={{ padding: '20px' }}>
+       <div className='form' style={{ }}>
 
 
          <h1>Contact Us</h1>
-         <form onSubmit={handleSubmit}>
+         <form  onSubmit={handleSubmit}>
            <input
              type="text"
              name="name"
