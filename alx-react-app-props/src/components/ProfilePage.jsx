@@ -1,5 +1,5 @@
 import UserInfo from './UserInfo';
 
-export default function ProfilePage({ userData }) {
-  return <UserInfo userData={userData} />;
+export default function ProfilePage() {
+  return <UserInfo/>;
 }
