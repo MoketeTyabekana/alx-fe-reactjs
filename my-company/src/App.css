@@ -1,9 +1,13 @@
 #root {
-  
   text-align: center;
 }
 
 li{
   color: #ffffff;
   text-decoration: none;
+}
+
+
+.services li{
+  color: #000000;
 }
