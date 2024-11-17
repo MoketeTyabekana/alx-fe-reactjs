@@ -5,6 +5,9 @@ import RecipeList from './components/RecipeList';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RecipeDetails from './components/RecipeDetails';
 import SearchBar from './components/SearchBar';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
+
 
 export default  function App() {
 
@@ -19,6 +22,8 @@ export default  function App() {
         <SearchBar/>
         <AddRecipeForm/>
         <RecipeList/>
+        <RecommendationsList/>
+        <FavoritesList/>
       </div>
   )
 }
