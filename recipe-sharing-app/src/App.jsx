@@ -4,24 +4,23 @@ import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RecipeDetails from './components/RecipeDetails';
+import SearchBar from './components/SearchBar';
 
-function App() {
+export default  function App() {
 
   return (
-    <>
-
-      <div>
+      <div style={{padding:'20px'}}>
         <Router>
           <Routes>
-            <Route path='/' element={<RecipeDetails/>}  />
+            <Route path='/' element={<AddRecipeForm />}  />
             <Route path='/recipe/:id' element={<RecipeDetails/>}  />
           </Routes>
         </Router>
+        <SearchBar/>
         <AddRecipeForm/>
         <RecipeList/>
       </div>
-    </>
   )
 }
 
-export default App;
+
