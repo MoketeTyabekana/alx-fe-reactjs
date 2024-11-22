@@ -13,7 +13,7 @@ const PostsComponent = () => {
   const { data, isError , isLoading } = useQuery('fetchPosts', fetchPosts);
 
   if (isLoading) return <p>Loading...</p>;
-  if (isError ) return <p>isError : {isError .message}</p>;
+  if (isError ) return <p>Error: {isError .message}</p>;
 
   return (
     <div>
