@@ -1,12 +1,13 @@
-import './App.css'
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-function App() {
- 
+  const queryClient = new QueryClient();
 
-  return (
-    <>
-    </>
-  )
-}
+  function App() {
+    return (
+      <QueryClientProvider client={queryClient}>
+        {/* <PostsComponent /> */}
+      </QueryClientProvider>
+    );
+  }
 
-export default App
+  export default App;
