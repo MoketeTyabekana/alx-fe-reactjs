@@ -7,8 +7,6 @@ export default function PostsComponent(){
         return res.json();
     };
 
-
-    return(
-
-    );
+        const { data, error, isLoading } = useQuery('fetchData', fetchData);
+    
 }
