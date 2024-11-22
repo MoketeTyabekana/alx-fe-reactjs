@@ -9,7 +9,10 @@ export default function RegistrationForm (){
         setFormData(prevState=>({...prevState,[name]:value}));
     }
 
-
+   const handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log(formData);
+   }
 
     return(
 <form action="">
