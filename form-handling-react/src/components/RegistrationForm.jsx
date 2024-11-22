@@ -55,13 +55,16 @@ export default function RegistrationForm() {
 
 
   return (
-    <form action="">
+    <form action="" onSubmit={handleSubmit}>
+        
       <input
         type="text"
         name="username"
         value={username}
         onChange={handleusernameChange}
         required
+
+        placeholder="Username"
       />
       <input
         type="text"
@@ -69,6 +72,8 @@ export default function RegistrationForm() {
         value={email}
         onChange={handleEmailChange}
         required
+
+        placeholder="Email"
       />
       <input
         type="text"
@@ -76,6 +81,7 @@ export default function RegistrationForm() {
         value={password}
         onChange={handlePasswordChange}
         required
+        placeholder="Password"
       />
 
       <button type="submit">Submit</button>
