@@ -11,11 +11,20 @@ export default function RegistrationForm() {
   });
 
 
-  const validateField=(name,value)=>{
-    let error='';
-
-   
-  }
+  const validateField = (name, value) => {
+    let error = "";
+  
+    if (name === "username" && value.trim() === "") {
+      error = "Username is required.";
+    } else if (name === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      error = "Enter a valid email address.";
+    } else if (name === "password" && value.length < 6) {
+      error = "Password must be at least 6 characters.";
+    }
+  
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
+  };
+  
 
   const handleusernameChange = (e) => {
     setUsername(e.target.value);
