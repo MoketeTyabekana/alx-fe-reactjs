@@ -14,6 +14,7 @@ const PostsComponent = () => {
 
     // Data is fresh for 2 minutes (120,000 ms)
     cacheTime: 120000, 
+    staleTime:100000,
 
     // Refetch data when window is focused
     refetchOnWindowFocus: true,
