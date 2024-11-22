@@ -17,9 +17,9 @@ export default function RegistrationForm (){
     return(
 <form action="" onSubmit={handleSubmit}>
 
-    <input type="text" name="name" value={username} onChange={handleChange} required/>
-    <input type="text" name="email" value={email} onChange={handleChange} required/>
-    <input type="text" name="password" value={password} onChange={handleChange} required />
+    <input type="text" name="name" value={formData.username} onChange={handleChange} required/>
+    <input type="text" name="email" value={formData.email} onChange={handleChange} required/>
+    <input type="text" name="password" value={formData.password} onChange={handleChange} required />
 
     <button type="submit">Submit</button>
 </form>
