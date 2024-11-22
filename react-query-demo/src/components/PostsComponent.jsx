@@ -31,7 +31,7 @@ const PostsComponent = () => {
 
   return (
     <div>
-        <button onClick={fetchPosts}></button>
+        <button onClick={fetchPosts}>Fetch Data</button>
       <h1>Posts</h1>
       <ul>
         {data.map(post => (
