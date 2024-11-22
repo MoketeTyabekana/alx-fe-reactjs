@@ -66,6 +66,9 @@ export default function RegistrationForm() {
 
         placeholder="Username"
       />
+
+{errors.username && <span className="error">{errors.username}</span>}
+
       <input
         type="text"
         name="email"
@@ -75,6 +78,8 @@ export default function RegistrationForm() {
 
         placeholder="Email"
       />
+{errors.email && <span className="error">{errors.email}</span>}
+
       <input
         type="text"
         name="password"
@@ -83,6 +88,7 @@ export default function RegistrationForm() {
         required
         placeholder="Password"
       />
+{errors.password && <span className="error">{errors.password}</span>}
 
       <button type="submit">Submit</button>
     </form>
