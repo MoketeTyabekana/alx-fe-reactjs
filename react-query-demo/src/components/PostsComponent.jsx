@@ -1,25 +1,33 @@
+import React from 'react';
 import { useQuery } from 'react-query';
 
-export default function PostsComponent(){
+const fetchPosts = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  if (!response.ok) {
+    throw new Error('Failed to fetch posts');
+  }
+  return response.json();
+};
 
-    const fetchData = async () => {
-        const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-        return res.json();
-    };
+const PostsComponent = () => {
+  const { data, error, isLoading } = useQuery('fetchPosts', fetchPosts);
 
-        const { data, error, isLoading } = useQuery('fetchData', fetchData);
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
-               // Handle loading state
-   if (isLoading) return <div>Loading...</div>;
-   // Handle error state
-   if (error) return <div>Error loading data</div>;
-   // Render the fetched data
-   return (
-       <div>
-           {data.map(item => (
-               <div key={item.id}>{item.name}</div>
-           ))}
-       </div>
-   );
-    
-}
+  return (
+    <div>
+      <h1>Posts</h1>
+      <ul>
+        {data.map(post => (
+          <li key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default PostsComponent;
