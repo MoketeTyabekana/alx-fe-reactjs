@@ -15,10 +15,11 @@ export default function RegistrationForm (){
    }
 
     return(
-<form action="">
-    <input type="text" name="name" value={formData.username} />
-    <input type="text" name="email" value={formData.email} />
-    <input type="text" name="password" value={formData.password} />
+<form action="" onSubmit={handleSubmit}>
+
+    <input type="text" name="name" value={formData.username} onChange={handleChange}/>
+    <input type="text" name="email" value={formData.email} onChange={handleChange} />
+    <input type="text" name="password" value={formData.password} onChange={handleChange} />
 
     <button type="submit">Submit</button>
 </form>
