@@ -6,14 +6,24 @@ export default function RegistrationForm (){
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
 
-    
+    const handleusernameChange=(e)=>{
+        setUsername(e.target.value);
+    }
+
+    const handleEmailChange=(e)=>{
+        setEmail(e.target.value);
+    }
+
+    const handlePasswordChange=(e)=>{
+        setPassword(e.target.value);
+    }
 
     return(
-<form action="" onSubmit={handleSubmit}>
+<form action="">
 
-    <input type="text" name="username" value={username} onChange={handleChange} required/>
-    <input type="text" name="email" value={email} onChange={handleChange} required/>
-    <input type="text" name="password" value={password} onChange={handleChange} required />
+    <input type="text" name="username" value={username} onChange={handleusernameChange} required/>
+    <input type="text" name="email" value={email} onChange={handleEmailChange} required/>
+    <input type="text" name="password" value={password} onChange={handlePasswordChange} required />
 
     <button type="submit">Submit</button>
 </form>
