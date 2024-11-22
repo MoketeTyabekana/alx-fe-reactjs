@@ -13,7 +13,7 @@ const PostsComponent = () => {
   const { data, error, isLoading, isError } = useQuery('fetchPosts', fetchPosts,{
 
     // Data is fresh for 2 minutes (120,000 ms)
-    staleTime: 120000, 
+    cacheTime: 120000, 
 
     // Refetch data when window is focused
     refetchOnWindowFocus: true,
