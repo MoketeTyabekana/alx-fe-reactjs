@@ -6,3 +6,17 @@ const validationSchema = Yup.object({
     email: Yup.string().email('Invalid email').required('Email is required'),
     password: Yup.string().required('Password is required')
 });
+
+
+const FormikForm = () => (
+    <Formik
+        initialValues={{ name: '', email: '',password:'' }}
+        validationSchema={validationSchema}
+        onSubmit={(values) => {
+            console.log(values);
+        }}
+    ></Formik>
+
+
+
+);
