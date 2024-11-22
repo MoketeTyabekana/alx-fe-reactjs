@@ -4,25 +4,39 @@ export default function RegistrationForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+  const [errors, setErrors] = useState({});
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const validateField = (name, value) => {
-    let error = "";
-  
-    if (name === "username" && value.trim() === "") {
-      error = "Username is required.";
-    } else if (name === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-      error = "Enter a valid email address.";
-    } else if (name === "password" && value.length < 6) {
-      error = "Password must be at least 6 characters.";
+    const newErrors = {};
+
+   
+    if (!username) {
+      newErrors.username = "Username is required.";
     }
-  
-    setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
+
+   
+    if (!email) {
+      newErrors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "Enter a valid email address.";
+    }
+
+   
+    if (!password) {
+      newErrors.password = "Password is required.";
+    } else if (password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters.";
+    }
+
+    
+    setErrors(newErrors);
+
+    
+    if (Object.keys(newErrors).length === 0) {
+      console.log("Form submitted successfully:", { username, email, password });
+    }
   };
   
 
@@ -37,6 +51,8 @@ export default function RegistrationForm() {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
+
+
 
   return (
     <form action="">
