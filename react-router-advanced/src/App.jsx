@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Switch>
-      <Route path='/' Component={BlogPost}/>
+      <Route path='/user/:userId' Component={BlogPost}/>
     </Switch>
   )
 }
