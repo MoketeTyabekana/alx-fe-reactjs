@@ -1,6 +1,6 @@
 import './App.css'
 import AddToDoForm from './components/AddTodoForm';
-import ToDoList from './components/TodoList';
+import TodoList from './components/TodoList';
 
 function App() {
  
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
             <AddToDoForm/>
-            <ToDoList/>
+            <TodoList/>
     </>
   )
 }
