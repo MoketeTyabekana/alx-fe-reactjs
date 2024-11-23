@@ -3,3 +3,37 @@
   padding: 0;
   box-sizing: 0;
 }
+
+body{
+  margin: 20px 40px;
+}
+
+input,button{
+  padding: 10px;
+}
+
+input{
+  width: 20rem;
+}
+
+button{
+  width: 6rem;
+  background-color: #fff;
+}
+ul{
+  display: block;
+  gap: 10px;
+}
+
+li{
+  color: #fff;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 10px;
+  background-color: #003636;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  align-items: center;
+  border-radius: 5px;
+}
