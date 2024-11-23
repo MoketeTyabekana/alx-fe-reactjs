@@ -1,17 +1,26 @@
-export default function AddToDoForm() {
+import React, { useState } from "react";
+
+const AddTodoForm = ({ onAddTodo }) => {
+  const [newTodo, setNewTodo] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (newTodo.trim() === "") return;
+    onAddTodo(newTodo);
+    setNewTodo("");
+  };
+
   return (
-    <div>
-      <form action="">
-        <input
-          type="text"
-          id="item"
-          name="item"
-          placeholder="Add A List item"
-        />
-        <button type="submit" id="submit">
-          Submit
-        </button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
+        placeholder="Add a new task"
+      />
+      <button type="submit">Add</button>
+    </form>
   );
-}
+};
+
+export default AddTodoForm;
