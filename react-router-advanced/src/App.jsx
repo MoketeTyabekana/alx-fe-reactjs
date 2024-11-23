@@ -3,12 +3,18 @@ import { BrowserRouter as Router,Routes, Route, Switch, Link, useRouteMatch } fr
 import Profile from './components/Profile';
 
 
+const BlogPost=()=>{
+  
+}
+
 function App() {
- 
+  
 
   return (
-    <Profile/>
+    <Switch>
+      <Route path='/' Component={BlogPost}/>
+    </Switch>
   )
 }
 
-export default App
+export default App;
