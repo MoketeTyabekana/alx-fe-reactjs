@@ -2,7 +2,13 @@
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false,
-  theme: { extend: {} },
+  theme: { 
+    extend: {
+      maxWidth: {
+        'custom': '400px',
+      },
+    } 
+  },
   variants: { extend: {} },
   plugins: [],
 };
