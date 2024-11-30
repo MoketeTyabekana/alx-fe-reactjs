@@ -4,8 +4,11 @@ module.exports = {
   darkMode: false,
   theme: { 
     extend: {
-      maxWidth: {
+      screens: {
+        // => @media (min-width: 400px) { ... }
         'max-w-sm': '400px',
+        // => @media (min-width: 640px) { ... }
+        'max-w-xs':'640px',
       },
     } 
   },
