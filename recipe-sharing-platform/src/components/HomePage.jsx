@@ -16,8 +16,7 @@ export default function HomePage(){
                 {recipes.map((recipe)=>(
                     
                     <div key={recipe.id} 
-                    className="max-w-xs rounded overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105 duration-300 "
-                    >
+                    className="max-w-xs rounded overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105 duration-300 bg-gray-50">
                         
                         <img className="w-full h-48 object-cover" style={{
                             width:200,height:200
