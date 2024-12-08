@@ -8,7 +8,7 @@ function App() {
 
   return (
   <>
-  <AddRecipeForm/>
+  {/* <AddRecipeForm/> */}
   <HomePage/>
   </>
   )
