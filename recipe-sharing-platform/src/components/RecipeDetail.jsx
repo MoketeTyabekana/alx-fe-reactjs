@@ -13,7 +13,12 @@ useEffect(()=>{
     const recipeDetails=recipeData.find((item)=>item.id===parseInt(id));
     setRecipes(recipeDetails);
 
-});
+}, [id]);
+
+
+if (!recipe){
+    return <p className='text-center text-gray-700 mt-4'>Loading Recipes...</p>
+}
 
 }
 
