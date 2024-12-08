@@ -8,6 +8,13 @@ const RecipeDetail =() =>{
 const  {id}=useParams();
 const [recipe,setRecipes]=useState(null);
 
+useEffect(()=>{
+
+    const recipeDetails=recipeData.find((item)=>item.id===parseInt(id));
+    setRecipes(recipeDetails);
+
+});
+
 }
 
 export default RecipeDetail;
