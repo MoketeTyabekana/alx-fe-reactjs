@@ -3,7 +3,41 @@ import React, { useState, handleSubmit } from "react";
 export default function AddRecipeForm() {
  
  
- 
+    const [title, setTitle] = useState("");
+    const [ingredients, setIngredients] = useState("");
+    const [steps, setSteps] = useState("");
+    const [error, setError] = useState("");
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+  
+      // Validation Logic
+      if (!title || !ingredients || !steps) {
+        setError("All fields are required.");
+        return;
+      }
+  
+      const ingredientsList = ingredients.split(",").map((item) => item.trim());
+      if (ingredientsList.length < 2) {
+        setError("Please include at least two ingredients.");
+        return;
+      }
+  
+      setError(""); // Clear errors if validation passes
+  
+      // Example of handling submitted data (e.g., send to API)
+      const newRecipe = {
+        title,
+        ingredients: ingredientsList,
+        steps,
+      };
+      console.log("New Recipe:", newRecipe);
+  
+      // Reset form
+      setTitle("");
+      setIngredients("");
+      setSteps("");
+    };
  
     return (
     <div className="container mx-auto p-4">
