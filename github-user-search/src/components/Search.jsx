@@ -21,7 +21,7 @@ const Search = () => {
       const data = await fetchUserData(username);
       setUserData(data);
     } catch (error) {
-      setError('Looks like we can’t find the user.');
+      setError("Looks like we can't find the user.");
     } finally {
       setLoading(false);
     }
@@ -45,9 +45,21 @@ const Search = () => {
         {error && <p style={{ color: 'red' }}>{error}</p>}
         {userData && (
           <div style={{ textAlign: 'left', marginTop: '20px' }}>
-            <img src={userData.avatar_url} alt={userData.name} style={{ width: '100px', borderRadius: '50%' }} />
-            <h2>{userData.name}</h2>
-            <a href={userData.html_url} target="_blank" rel="noopener noreferrer">View Profile</a>
+            <img
+              src={userData.avatar_url}
+              alt={userData.name || 'GitHub User'}
+              style={{ width: '100px', borderRadius: '50%' }}
+            />
+            <h2>{userData.name || 'Name not available'}</h2>
+            <p><strong>Username:</strong> {userData.login}</p>
+            <a
+              href={userData.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'blue' }}
+            >
+              View Profile
+            </a>
           </div>
         )}
       </div>
