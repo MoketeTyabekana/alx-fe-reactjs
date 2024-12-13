@@ -1,15 +1,33 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
+const Home = () => <h1>Welcome to the Home Page</h1>;
+const About = () => <h1>About Us</h1>;
+const Contact = () => <h1>Contact Us</h1>;
 
-function App() {
-  
-
+const App = () => {
   return (
-    <div className='container'>
-    <h1 className='text-amber-300'>Github User Search</h1>
-    </div>
-  )
-}
+    <Router>
+      <div>
+        {/* Navigation Bar */}
+        <nav style={{ padding: '10px', background: '#f4f4f4' }}>
+          <Link to="/" style={{ margin: '0 10px' }}>Home</Link>
+          {/* <Link to="/about" style={{ margin: '0 10px' }}>About</Link> */}
+          {/* <Link to="/contact" style={{ margin: '0 10px' }}>Contact</Link> */}
+        </nav>
 
-export default App
+        {/* Main Content */}
+        <div style={{ padding: '20px' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/* <Route path="/about" element={<About />} /> */}
+            {/* <Route path="/contact" element={<Contact />} /> */}
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
+};
+
+export default App;
